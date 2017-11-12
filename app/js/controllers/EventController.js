@@ -2,6 +2,7 @@
 
 eventsApp.controller("EventController",
     function EventController($scope) {
+        $scope.sortOrder = 'upvote';
         $scope.event = {
             name: "Angular js training",
             date: "01/01/2017",
@@ -11,31 +12,37 @@ eventsApp.controller("EventController",
             },
             sessions: [
                 {
-                    name: "Intro to angular",
+                    name: "Intro to Angular",
                     hour: "9:30",
                     room: "Vlad Tepes",
+                    level: "introductory",
+                    duration: 1,
                     upvote: 0
                 },
                 {
-                    name: "Angular new features",
+                    name: "Deep dive in AngularJS",
                     hour: "12:30",
                     room: "Mihai Viteazul",
+                    level: "advanced",
+                    duration: 2,
                     upvote: 0
                 },
                 {
-                    name: "Angular 1.5 new features",
+                    name: "AngularJS 1.5 new features",
                     hour: "14:00",
                     room: "Matei Basarab",
+                    level: "intermediate",
+                    duration: 4,
                     upvote: 0
                 }
             ]
         }
 
-        $scope.upVoteSession = function(session) {
+        $scope.upVoteSession = function (session) {
             session.upvote++;
         }
 
-        $scope.downVoteSession = function(session) {
+        $scope.downVoteSession = function (session) {
             session.upvote--;
         }
     });
